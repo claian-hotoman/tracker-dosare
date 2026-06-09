@@ -7,8 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --mono:'IBM Plex Mono',monospace;
-  --sans:'IBM Plex Sans',sans-serif;
+  --mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',sans-serif;
   --rot:#185FA5;--rot-bg:#E6F1FB;--rot-bd:#B5D4F4;
   --nrot:#854F0B;--nrot-bg:#FAEEDA;--nrot-bd:#FAC775;
   --ok:#3B6D11;--ok-bg:#EAF3DE;--ok-bd:#C0DD97;
@@ -36,7 +35,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .sec{margin-bottom:24px}
 .sec-t{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 20px}
-/* calendar */
 .cal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
 .cal-m{border-radius:6px;padding:8px 6px;text-align:center;border:0.5px solid var(--border);background:var(--surface2)}
 .cal-m.rot{background:var(--rot-bg);border-color:var(--rot-bd)}
@@ -52,10 +50,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;border:0.5px solid}
 .ovr-row{display:flex;gap:6px;margin-top:12px;align-items:center;flex-wrap:wrap}
 .ovr-lbl{font-size:11px;color:var(--text3);letter-spacing:.06em}
-.ovr-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;font-family:var(--sans);cursor:pointer;transition:background .15s}
-.ovr-btn:hover{background:var(--surface2)}
+.ovr-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:12px;font-family:var(--sans);cursor:pointer}
 .ovr-btn.on{background:var(--text);color:var(--surface);border-color:var(--text)}
-/* week */
 .wk-split{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
 .wk-num{font-family:var(--mono);font-size:54px;font-weight:500;line-height:1}
 .wk-num.ok{color:var(--ok)}.wk-num.warn{color:var(--warn)}.wk-num.bad{color:var(--bad)}
@@ -75,23 +71,19 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .sat.neutral{background:var(--surface2);border-color:var(--border)}
 .sat-lbl{font-size:12px;font-weight:500;margin-bottom:4px}
 .sat-txt{font-size:12px;line-height:1.6;color:var(--text2)}
-/* month */
 .mets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
 .mc{background:var(--surface2);border-radius:6px;padding:14px 16px}
 .mc-l{font-size:11px;color:var(--text3);letter-spacing:.04em;margin-bottom:5px}
 .mc-v{font-family:var(--mono);font-size:26px;font-weight:500;line-height:1}
 .mc-v.ok{color:var(--ok)}.mc-v.warn{color:var(--warn)}
 .mc-s{font-size:11px;color:var(--text2);margin-top:4px}
-/* revenue */
 .rev-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .rv{text-align:center}
 .rv-l{font-size:11px;color:var(--text3);margin-bottom:4px}
 .rv-v{font-family:var(--mono);font-size:14px;font-weight:500}
-/* log */
 .log-wrap{overflow-x:auto}
 .log-t{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
 .log-t th{text-align:left;font-size:11px;font-weight:500;color:var(--text3);letter-spacing:.04em;padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap}
-.log-t th:hover{color:var(--text2)}
 .log-t td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
 .log-t tr:last-child td{border-bottom:none}
 .nm{font-family:var(--mono);font-weight:500}
@@ -99,27 +91,18 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 .del-btn{background:none;border:none;color:var(--text3);cursor:pointer;font-size:18px;padding:0 4px;line-height:1}
 .del-btn:hover{color:var(--bad)}
 .empty-row td{color:var(--text3);text-align:center;padding:2rem;font-style:italic}
-/* form */
 .fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
 .fld label{display:block;font-size:11px;color:var(--text3);letter-spacing:.04em;margin-bottom:4px}
-.fld input{width:100%;padding:6px 9px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:var(--sans);background:var(--surface);color:var(--text);outline:none;transition:border-color .15s}
-.fld input:focus{border-color:var(--text2)}
+.fld input{width:100%;padding:6px 9px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:var(--sans);background:var(--surface);color:var(--text);outline:none}
 .cb-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);margin-bottom:10px;cursor:pointer}
 .cb-row input{width:auto}
 .nf{width:100%;margin-bottom:10px}
-.sub-btn{background:var(--text);color:var(--surface);border:none;border-radius:6px;font-size:13px;font-family:var(--sans);font-weight:500;padding:8px 20px;cursor:pointer;letter-spacing:.02em;transition:opacity .15s}
-.sub-btn:hover{opacity:.8}
+.sub-btn{background:var(--text);color:var(--surface);border:none;border-radius:6px;font-size:13px;font-family:var(--sans);font-weight:500;padding:8px 20px;cursor:pointer}
 .sub-btn:disabled{opacity:.4;cursor:not-allowed}
-/* status */
 .status-bar{margin-top:10px;font-size:12px;font-family:var(--mono);min-height:20px;padding:4px 0}
-.status-bar.ok{color:var(--ok)}
-.status-bar.err{color:var(--bad)}
-.status-bar.loading{color:var(--text3)}
-/* sync indicator */
+.status-bar.ok{color:var(--ok)}.status-bar.err{color:var(--bad)}.status-bar.loading{color:var(--text3)}
 .sync-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.sync-dot.synced{background:var(--ok)}
-.sync-dot.syncing{background:var(--warn)}
-.sync-dot.error{background:var(--bad)}
+.sync-dot.synced{background:var(--ok)}.sync-dot.syncing{background:var(--warn)}.sync-dot.error{background:var(--bad)}
 @media(max-width:600px){
   .cal-grid{grid-template-columns:repeat(4,1fr)}
   .mets,.fg,.rev-g{grid-template-columns:1fr 1fr}
@@ -130,369 +113,218 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14
 </head>
 <body>
 <div class="wrap" id="root">
-  <div style="text-align:center;padding:3rem;color:var(--text3);font-size:14px">
-    <div style="margin-bottom:8px">Se conectează la Google Sheets...</div>
-    <div style="font-size:12px;font-family:'IBM Plex Mono',monospace;color:var(--text3)" id="boot-status"></div>
-  </div>
+  <div style="text-align:center;padding:3rem;color:var(--text3);font-size:14px">Se conectează la Google Sheets...</div>
 </div>
-
 <script>
-// ── CONFIG ─────────────────────────────────────────────────
-const GS_URL = 'https://script.google.com/macros/s/AKfycbyQzSREzlnrEvqcMmYIlFP6R7XTs931xjrSx9XtxZHtFGXLyubkcuk8HyT6XjluJss9iQ/exec';
+var GS_URL = 'https://script.google.com/macros/s/AKfycbwT_DfpoFzaHiRAwKoHHXvU-CibWQ9H56yz3iyT3qAyXaMNcdw_-K4LcO8Zl5c1Cm1ZXQ/exec';
+var ROT = [1,3,4,6,7,9,10,12];
+var T = { rot:{std:80,dm:4,depl:4,week:20}, nrot:{std:50,dm:9,depl:4,week:12} };
+var MO = ['Ian','Feb','Mar','Apr','Mai','Iun','Iul','Aug','Sep','Oct','Nov','Dec'];
+var E = [], OVR = 'auto', SC = 'date', SA = false, isSaving = false, cbIdx = 0;
 
-// ── CONSTANTS ──────────────────────────────────────────────
-const ROT = new Set([1,3,4,6,7,9,10,12]);
-const T = { rot:{std:80,dm:4,depl:4,week:20}, nrot:{std:50,dm:9,depl:4,week:12} };
-const MO = ['Ian','Feb','Mar','Apr','Mai','Iun','Iul','Aug','Sep','Oct','Nov','Dec'];
-
-// ── STATE ──────────────────────────────────────────────────
-let E = [], OVR = 'auto', SC = 'date', SA = false;
-let isSaving = false;
-
-// ── UTILS ──────────────────────────────────────────────────
-const pad = n => String(n).padStart(2,'0');
-const today = () => { const d=new Date(); return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; };
-function mtype(m1){ if(m1===new Date().getMonth()+1 && OVR!=='auto') return OVR; return ROT.has(m1)?'rot':'nrot'; }
-function monday(s){ const d=new Date(s+'T12:00:00'),dw=d.getDay(); d.setDate(d.getDate()-(dw===0?6:dw-1)); return d.toISOString().slice(0,10); }
-function monthE(yr,m1){ return E.filter(e=>e.date.startsWith(`${yr}-${pad(m1)}`)); }
-function weekE(mon){ const fri=new Date(mon+'T12:00:00'); fri.setDate(fri.getDate()+4); const friS=fri.toISOString().slice(0,10); return E.filter(e=>{ if(e.date<mon||e.date>friS)return false; const dw=new Date(e.date+'T12:00:00').getDay(); return dw>=1&&dw<=5; }); }
-function sumE(arr){ return arr.reduce((a,e)=>({std:a.std+(e.std||0),dm:a.dm+(e.dm||0),depl:a.depl+(e.depl?1:0)}),{std:0,dm:0,depl:0}); }
+function pad(n){ return String(n).padStart(2,'0'); }
+function today(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+function isRot(m1){ return ROT.indexOf(m1) >= 0; }
+function mtype(m1){ if(m1===new Date().getMonth()+1 && OVR!=='auto') return OVR; return isRot(m1)?'rot':'nrot'; }
+function monday(s){ var d=new Date(s+'T12:00:00'),dw=d.getDay(); d.setDate(d.getDate()-(dw===0?6:dw-1)); return d.toISOString().slice(0,10); }
+function monthE(yr,m1){ return E.filter(function(e){ return e.date.indexOf(yr+'-'+pad(m1))===0; }); }
+function weekE(mon){ var fri=new Date(mon+'T12:00:00'); fri.setDate(fri.getDate()+4); var friS=fri.toISOString().slice(0,10); return E.filter(function(e){ if(e.date<mon||e.date>friS)return false; var dw=new Date(e.date+'T12:00:00').getDay(); return dw>=1&&dw<=5; }); }
+function sumE(arr){ return arr.reduce(function(a,e){ return {std:a.std+(e.std||0),dm:a.dm+(e.dm||0),depl:a.depl+(e.depl?1:0)}; },{std:0,dm:0,depl:0}); }
 function fmtDate(s){ return new Date(s+'T12:00:00').toLocaleDateString('ro-RO',{day:'2-digit',month:'2-digit',weekday:'short'}); }
 
-// ── GOOGLE SHEETS API ──────────────────────────────────────
-async function gsRead() {
-  const res = await fetch(`${GS_URL}?action=read`, { method:'GET' });
-  const rows = await res.json();
-  // rows[0] = header, rest = data
-  if (!rows || rows.length < 2) return [];
-  return rows.slice(1).map(r => ({
-    date:  r[0] || '',
-    std:   parseInt(r[1]) || 0,
-    dm:    parseInt(r[2]) || 0,
-    depl:  r[3] === 'true' || r[3] === true,
-    note:  r[4] || '',
-    ovr:   r[5] // only in row 0 extra col, ignored here
-  })).filter(e => e.date);
-}
-
-async function gsWrite(entries, ovr) {
-  const data = [
-    ['date','std','dm','depl','note','__ovr__', ovr], // header row with ovr embedded
-    ...entries.map(e => [e.date, e.std, e.dm, e.depl ? 'true':'false', e.note || '',''])
-  ];
-  await fetch(GS_URL, {
-    method: 'POST',
-    body: JSON.stringify({ action:'save', data }),
-    headers: { 'Content-Type':'text/plain' } // avoid CORS preflight
+function jsonp(url){
+  return new Promise(function(resolve,reject){
+    var cb='__gscb'+(++cbIdx);
+    var script=document.createElement('script');
+    var timer=setTimeout(function(){ cleanup(); reject(new Error('timeout')); },20000);
+    function cleanup(){ clearTimeout(timer); delete window[cb]; if(script.parentNode)script.parentNode.removeChild(script); }
+    window[cb]=function(data){ cleanup(); resolve(data); };
+    script.src=url+(url.indexOf('?')>=0?'&':'?')+'callback='+cb+'&t='+Date.now();
+    script.onerror=function(){ cleanup(); reject(new Error('script error')); };
+    document.head.appendChild(script);
   });
 }
 
-async function loadData() {
-  try {
-    setBootStatus('Citire date din Sheets...');
-    const rows = await gsRead();
-    E = rows;
-    // read OVR from header if present
-    // (stored as extra col in header row — handled in gsRead below)
-    draw();
-    setBootStatus('');
-  } catch(err) {
-    console.error(err);
-    // fallback to empty
-    E = [];
-    draw();
-    setBootStatus('⚠ Nu s-a putut conecta la Sheets. Datele nu se salvează.');
-  }
-}
-
-// extended read that also gets OVR
-async function loadDataFull() {
-  try {
-    setBootStatus('Citire date din Sheets...');
-    const res = await fetch(`${GS_URL}?action=read`);
-    const rows = await res.json();
-    if (rows && rows.length >= 1) {
-      const header = rows[0];
-      // OVR stored in col 6 of header row
-      if (header[6] === 'rot' || header[6] === 'nrot') OVR = header[6];
-      else OVR = 'auto';
-      E = rows.slice(1).map(r => ({
-        date: r[0]||'', std:parseInt(r[1])||0, dm:parseInt(r[2])||0,
-        depl: r[3]==='true'||r[3]===true, note:r[4]||''
-      })).filter(e=>e.date);
-    } else {
-      E = []; OVR = 'auto';
-    }
-    draw();
-    setBootStatus('');
-  } catch(err) {
-    console.error(err);
-    E = []; OVR = 'auto';
-    draw();
-    setStatus('⚠ Eroare conectare Sheets. Funcționezi offline.','err');
-  }
-}
-
-async function saveData() {
-  const data = [
-    ['date','std','dm','depl','note','','__ovr__', OVR],
-    ...E.map(e=>[e.date,e.std,e.dm,e.depl?'true':'false',e.note||'','',''])
-  ];
-  await fetch(GS_URL, {
-    method:'POST',
-    body: JSON.stringify({action:'save', data}),
-    headers:{'Content-Type':'text/plain'}
+function gsRead(){
+  return jsonp(GS_URL+'?action=read').then(function(rows){
+    if(!rows||rows.length<1) return {entries:[],ovr:'auto'};
+    var header=rows[0];
+    var ovr=(header[7]==='rot'||header[7]==='nrot')?header[7]:'auto';
+    var entries=rows.slice(1).map(function(r){
+      return {date:String(r[0]||''),std:parseInt(r[1])||0,dm:parseInt(r[2])||0,depl:r[3]==='true'||r[3]===true,note:String(r[4]||'')};
+    }).filter(function(e){ return e.date.length>0; });
+    return {entries:entries,ovr:ovr};
   });
 }
 
-// ── ACTIONS ────────────────────────────────────────────────
-async function addEntry() {
-  if(isSaving) return;
-  const date = document.getElementById('f-date').value;
-  if(!date){ alert('Selectează data'); return; }
-  const std  = Math.max(0, parseInt(document.getElementById('f-std').value)||0);
-  const dm   = Math.max(0, parseInt(document.getElementById('f-dm').value)||0);
-  const depl = document.getElementById('f-depl').checked;
-  const note = document.getElementById('f-note').value.trim();
+function gsWrite(){
+  var data=[['date','std','dm','depl','note','','','__ovr__',OVR]];
+  E.forEach(function(e){ data.push([e.date,e.std,e.dm,e.depl?'true':'false',e.note||'','','','']); });
+  var payload=encodeURIComponent(JSON.stringify(data));
+  return jsonp(GS_URL+'?action=save&data='+payload);
+}
 
-  const xi = E.findIndex(e=>e.date===date);
-  if(xi>=0) E[xi]={date,std,dm,depl,note};
-  else E.push({date,std,dm,depl,note});
+function loadData(){
+  gsRead().then(function(result){
+    E=result.entries; OVR=result.ovr;
+    draw();
+  }).catch(function(err){
+    console.error(err);
+    E=[]; OVR='auto';
+    draw();
+    setStatus('Eroare conectare Sheets. Verifică conexiunea.','err');
+  });
+}
 
-  // optimistic UI update
+function addEntry(){
+  if(isSaving)return;
+  var date=document.getElementById('f-date').value;
+  if(!date){alert('Selectează data');return;}
+  var std=Math.max(0,parseInt(document.getElementById('f-std').value)||0);
+  var dm=Math.max(0,parseInt(document.getElementById('f-dm').value)||0);
+  var depl=document.getElementById('f-depl').checked;
+  var note=document.getElementById('f-note').value.trim();
+  var xi=E.findIndex(function(e){return e.date===date;});
+  if(xi>=0)E[xi]={date:date,std:std,dm:dm,depl:depl,note:note};
+  else E.push({date:date,std:std,dm:dm,depl:depl,note:note});
   draw();
   setSyncState('syncing');
-  setStatus('Se salvează în Sheets...','loading');
-  isSaving = true;
-  const btn = document.getElementById('add-btn');
-  if(btn) btn.disabled = true;
-
-  try {
-    await saveData();
+  setStatus('Se salvează...','loading');
+  isSaving=true;
+  var btn=document.getElementById('add-btn');
+  if(btn)btn.disabled=true;
+  gsWrite().then(function(){
     setSyncState('synced');
-    setStatus(`✓ Salvat: ${fmtDate(date)} — ${std} std, ${dm} DM${depl?' + depl':''}`, 'ok');
-    // reset form
+    setStatus('Salvat: '+fmtDate(date)+' — '+std+' std, '+dm+' DM'+(depl?' + depl':''),'ok');
     document.getElementById('f-std').value='0';
     document.getElementById('f-dm').value='0';
     document.getElementById('f-depl').checked=false;
     document.getElementById('f-note').value='';
     document.getElementById('f-date').value=today();
-  } catch(err) {
+  }).catch(function(){
     setSyncState('error');
-    setStatus('⚠ Eroare la salvare. Încearcă din nou.','err');
-  } finally {
-    isSaving = false;
-    const btn2 = document.getElementById('add-btn');
-    if(btn2) btn2.disabled = false;
-  }
+    setStatus('Eroare la salvare. Încearcă din nou.','err');
+  }).finally(function(){
+    isSaving=false;
+    var b=document.getElementById('add-btn');
+    if(b)b.disabled=false;
+  });
 }
 
-async function delEntry(date) {
-  if(!confirm(`Ștergi intrarea pentru ${date}?`)) return;
-  E = E.filter(e=>e.date!==date);
+function delEntry(date){
+  if(!confirm('Ștergi intrarea pentru '+date+'?'))return;
+  E=E.filter(function(e){return e.date!==date;});
   draw();
   setSyncState('syncing');
-  try {
-    await saveData();
+  gsWrite().then(function(){
     setSyncState('synced');
-    setStatus(`✓ Intrare ștearsă: ${date}`,'ok');
-  } catch(err) {
+    setStatus('Intrare ștearsă','ok');
+  }).catch(function(){
     setSyncState('error');
-    setStatus('⚠ Eroare la ștergere.','err');
-  }
+    setStatus('Eroare la ștergere.','err');
+  });
 }
 
-async function setOvr(val) {
-  OVR = val;
-  draw();
-  try {
-    await saveData();
-    setSyncState('synced');
-  } catch {}
+function setOvr(val){
+  OVR=val; draw();
+  gsWrite().then(function(){setSyncState('synced');}).catch(function(){});
 }
 
-function sortBy(col){ if(SC===col) SA=!SA; else{ SC=col; SA=false; } draw(); }
+function sortBy(col){ if(SC===col)SA=!SA; else{SC=col;SA=false;} draw(); }
 
-// ── STATUS HELPERS ─────────────────────────────────────────
-function setBootStatus(msg) {
-  const el = document.getElementById('boot-status');
-  if(el) el.textContent = msg;
+function setStatus(msg,type){
+  var el=document.getElementById('save-status');
+  if(!el)return;
+  el.textContent=msg;
+  el.className='status-bar '+(type||'');
+  if(type==='ok')setTimeout(function(){if(el){el.textContent='';el.className='status-bar';}},4000);
 }
-function setStatus(msg, type='ok') {
-  const el = document.getElementById('save-status');
-  if(!el) return;
-  el.textContent = msg;
-  el.className = 'status-bar ' + type;
-  if(type==='ok') setTimeout(()=>{ el.textContent=''; el.className='status-bar'; }, 4000);
-}
-function setSyncState(state) {
-  const el = document.getElementById('sync-dot');
-  if(el) el.className = 'sync-dot ' + state;
+function setSyncState(state){
+  var el=document.getElementById('sync-dot');
+  if(el)el.className='sync-dot '+state;
 }
 
-// ── RENDER ─────────────────────────────────────────────────
-function draw() {
-  const now=new Date(), yr=now.getFullYear(), cm1=now.getMonth()+1;
-  const ct=mtype(cm1), Tc=T[ct];
-  const mTot=sumE(monthE(yr,cm1));
-  const wkd=sumE(weekE(monday(today()))).std;
-  document.getElementById('root').innerHTML =
-    hdr(now,cm1,ct,Tc) + cal(yr,cm1) + wkPanel(wkd,Tc,now) +
-    monthPanel(mTot,Tc,now,cm1,yr) + revPanel(mTot) + logPanel() + formPanel();
-  document.getElementById('f-date').value = today();
+function draw(){
+  var now=new Date(),yr=now.getFullYear(),cm1=now.getMonth()+1;
+  var ct=mtype(cm1),Tc=T[ct];
+  var mTot=sumE(monthE(yr,cm1));
+  var wkd=sumE(weekE(monday(today()))).std;
+  document.getElementById('root').innerHTML=hdr(now,cm1,ct,Tc)+cal(yr,cm1)+wkPanel(wkd,Tc,now)+monthPanel(mTot,Tc,now,cm1,yr)+revPanel(mTot)+logPanel()+formPanel();
+  document.getElementById('f-date').value=today();
 }
 
 function hdr(now,cm1,ct,Tc){
-  const mn=now.toLocaleDateString('ro-RO',{month:'long',year:'numeric'});
-  const Mn=mn.charAt(0).toUpperCase()+mn.slice(1);
-  return `<div class="hdr">
-    <div>
-      <h1>Tracker volum dosare</h1>
-      <div class="hdr-sub">Target: ${Tc.std} std · ${Tc.dm} DM · ${Tc.depl} depl · ${Tc.week}/săpt</div>
-    </div>
-    <div class="hdr-right">
-      <span class="hdr-month">${Mn}</span>
-      <span class="badge ${ct}">${ct==='rot'?'Rotativă':'Non-rotativă'}</span>
-      <span style="font-size:11px;color:var(--text3);display:flex;align-items:center">
-        <span class="sync-dot synced" id="sync-dot"></span>Sheets
-      </span>
-    </div>
-  </div>`;
+  var mn=now.toLocaleDateString('ro-RO',{month:'long',year:'numeric'});
+  var Mn=mn.charAt(0).toUpperCase()+mn.slice(1);
+  return '<div class="hdr"><div><h1>Tracker volum dosare</h1><div class="hdr-sub">Target: '+Tc.std+' std · '+Tc.dm+' DM · '+Tc.depl+' depl · '+Tc.week+'/săpt</div></div><div class="hdr-right"><span class="hdr-month">'+Mn+'</span><span class="badge '+ct+'">'+(ct==='rot'?'Rotativă':'Non-rotativă')+'</span><span style="font-size:11px;color:var(--text3);display:flex;align-items:center"><span class="sync-dot synced" id="sync-dot"></span>Sheets</span></div></div>';
 }
 
 function cal(yr,cm1){
-  const cells=MO.map((n,i)=>{
-    const m1=i+1,mt=mtype(m1),isCur=m1===cm1;
-    const s=sumE(monthE(yr,m1));
-    return `<div class="cal-m ${mt}${isCur?' cur':''}">
-      <div class="cm-n">${n}</div>
-      <div class="cm-t">${mt==='rot'?'R':'N'}</div>
-      <div class="cm-c">${s.std>0?s.std:'—'}</div>
-    </div>`;
+  var cells=MO.map(function(n,i){
+    var m1=i+1,mt=mtype(m1),isCur=m1===cm1;
+    var s=sumE(monthE(yr,m1));
+    return '<div class="cal-m '+mt+(isCur?' cur':'')+'"><div class="cm-n">'+n+'</div><div class="cm-t">'+(mt==='rot'?'R':'N')+'</div><div class="cm-c">'+(s.std>0?s.std:'—')+'</div></div>';
   }).join('');
-  const ovrBtns=[['auto','Auto'],['rot','Rotativă'],['nrot','Non-rot.']].map(([v,l])=>
-    `<button class="ovr-btn${OVR===v?' on':''}" onclick="setOvr('${v}')">${l}</button>`).join('');
-  return `<div class="sec"><div class="sec-t">Calendar anual — ${yr}</div>
-    <div class="card">
-      <div class="cal-grid">${cells}</div>
-      <div class="leg-row">
-        <span class="leg"><span class="leg-dot" style="background:var(--rot-bg);border-color:var(--rot-bd)"></span>Rotativă · 80 std · 20/săpt</span>
-        <span class="leg"><span class="leg-dot" style="background:var(--nrot-bg);border-color:var(--nrot-bd)"></span>Non-rotativă · 50 std · 12/săpt</span>
-      </div>
-      <div class="ovr-row"><span class="ovr-lbl">TIP LUNĂ CURENTĂ:</span>${ovrBtns}</div>
-    </div>
-  </div>`;
+  var ovrBtns=[['auto','Auto'],['rot','Rotativă'],['nrot','Non-rot.']].map(function(v){
+    return '<button class="ovr-btn'+(OVR===v[0]?' on':'')+'" onclick="setOvr(\''+v[0]+'\')">'+v[1]+'</button>';
+  }).join('');
+  return '<div class="sec"><div class="sec-t">Calendar anual — '+yr+'</div><div class="card"><div class="cal-grid">'+cells+'</div><div class="leg-row"><span class="leg"><span class="leg-dot" style="background:var(--rot-bg);border-color:var(--rot-bd)"></span>Rotativă · 80 std · 20/săpt</span><span class="leg"><span class="leg-dot" style="background:var(--nrot-bg);border-color:var(--nrot-bd)"></span>Non-rotativă · 50 std · 12/săpt</span></div><div class="ovr-row"><span class="ovr-lbl">TIP LUNĂ CURENTĂ:</span>'+ovrBtns+'</div></div></div>';
 }
 
 function wkPanel(wkd,Tc,now){
-  const TW=Tc.week,freeT=Math.round(TW*.8),lightT=Math.round(TW*.65);
-  const pct=Math.min(100,Math.round(wkd/TW*100));
-  const cls=wkd>=freeT?'ok':wkd>=lightT?'warn':'bad';
-  const clr=cls==='ok'?'var(--ok)':cls==='warn'?'var(--warn)':'var(--bad)';
-  const bt=cls==='ok'?'Target atins':cls==='warn'?'În progres':'În urmă';
-  const dw=now.getDay(),dL=dw>=1&&dw<=5?5-dw:0,rem=Math.max(0,TW-wkd);
-  let wi;
-  if(dw===6||dw===0){ wi=`Weekend. Săptămâna viitoare: target <strong>${TW} dosare</strong>`; }
+  var TW=Tc.week,freeT=Math.round(TW*.8),lightT=Math.round(TW*.65);
+  var pct=Math.min(100,Math.round(wkd/TW*100));
+  var cls=wkd>=freeT?'ok':wkd>=lightT?'warn':'bad';
+  var clr=cls==='ok'?'var(--ok)':cls==='warn'?'var(--warn)':'var(--bad)';
+  var bt=cls==='ok'?'Target atins':cls==='warn'?'În progres':'În urmă';
+  var dw=now.getDay(),dL=dw>=1&&dw<=5?5-dw:0,rem=Math.max(0,TW-wkd);
+  var wi;
+  if(dw===6||dw===0){wi='Weekend. Săptămâna viitoare: target <strong>'+TW+' dosare</strong>';}
   else{
-    wi=`Zile lucrătoare rămase: <strong>${dL}</strong><br>Rămase din target: <strong>${rem}</strong><br>`;
-    if(dL>0) wi+=`Necesar/zi: <strong>${Math.ceil(rem/Math.max(dL,1))} dosare</strong>`;
-    else wi+=wkd>=TW?`<span style="color:var(--ok)">Săptămână încheiată — target atins ✓</span>`:`<span style="color:var(--bad)">Săptămână încheiată sub target.</span>`;
+    wi='Zile lucrătoare rămase: <strong>'+dL+'</strong><br>Rămase din target: <strong>'+rem+'</strong><br>';
+    if(dL>0)wi+='Necesar/zi: <strong>'+Math.ceil(rem/Math.max(dL,1))+' dosare</strong>';
+    else wi+=wkd>=TW?'<span style="color:var(--ok)">Săptămână încheiată — target atins</span>':'<span style="color:var(--bad)">Săptămână încheiată sub target.</span>';
   }
-  let satC,satL,satT;
-  if(wkd>=freeT){ satC='ok';satL='Sâmbătă — Liber';satT=`Target aproape atins (${wkd}/${TW}). Sâmbătă = recuperare completă.`; }
-  else if(wkd>=lightT){ satC='warn';satL='Sâmbătă — Ușoară (1–2 dosare)';satT=`Ești cu ${TW-wkd} dosare sub target. 1–2 dosare sâmbătă închid săptămâna corect.`; }
-  else if(wkd>0){ satC='bad';satL='Sâmbătă — Activă (2–3 dosare)';satT=`Săptămână sub target (${wkd}/${TW}). 2–3 dosare sâmbătă pentru a limita deficitul lunar.`; }
-  else{ satC='neutral';satL='Sâmbătă';satT='Adaugă intrări pentru zilele lucrătoare pentru a vedea recomandarea.'; }
-  return `<div class="sec"><div class="sec-t">Săptămâna curentă</div>
-    <div class="card">
-      <div class="wk-split">
-        <div>
-          <div class="wk-num ${cls}">${wkd}</div>
-          <div class="wk-den">din ${TW} · luni–vineri</div>
-          <div class="pb-wrap">
-            <div class="pb-bg"><div class="pb-fill" style="width:${pct}%;background:${clr}"></div></div>
-            <div class="pb-ends"><span>0</span><span>${TW}</span></div>
-          </div>
-          <span class="badge ${cls}">${bt}</span>
-        </div>
-        <div class="wk-info">${wi}</div>
-      </div>
-      <div class="sat ${satC}"><div class="sat-lbl">${satL}</div><div class="sat-txt">${satT}</div></div>
-    </div>
-  </div>`;
+  var satC,satL,satT;
+  if(wkd>=freeT){satC='ok';satL='Sâmbătă — Liber';satT='Target aproape atins ('+wkd+'/'+TW+'). Sâmbătă = recuperare completă.';}
+  else if(wkd>=lightT){satC='warn';satL='Sâmbătă — Ușoară (1–2 dosare)';satT='Ești cu '+(TW-wkd)+' dosare sub target. 1–2 dosare sâmbătă închid săptămâna corect.';}
+  else if(wkd>0){satC='bad';satL='Sâmbătă — Activă (2–3 dosare)';satT='Săptămână sub target ('+wkd+'/'+TW+'). 2–3 dosare sâmbătă pentru a limita deficitul lunar.';}
+  else{satC='neutral';satL='Sâmbătă';satT='Adaugă intrări pentru zilele lucrătoare pentru a vedea recomandarea.';}
+  return '<div class="sec"><div class="sec-t">Săptămâna curentă</div><div class="card"><div class="wk-split"><div><div class="wk-num '+cls+'">'+wkd+'</div><div class="wk-den">din '+TW+' · luni–vineri</div><div class="pb-wrap"><div class="pb-bg"><div class="pb-fill" style="width:'+pct+'%;background:'+clr+'"></div></div><div class="pb-ends"><span>0</span><span>'+TW+'</span></div></div><span class="badge '+cls+'">'+bt+'</span></div><div class="wk-info">'+wi+'</div></div><div class="sat '+satC+'"><div class="sat-lbl">'+satL+'</div><div class="sat-txt">'+satT+'</div></div></div></div>';
 }
 
 function monthPanel(mTot,Tc,now,cm1,yr){
-  const dim=new Date(yr,cm1,0).getDate(),exp=Math.round(Tc.std*now.getDate()/dim);
-  const mds=[{l:'DOSARE STANDARD',v:mTot.std,tgt:Tc.std},{l:'DAUNE MORALE',v:mTot.dm,tgt:Tc.dm},{l:'DEPLASĂRI',v:mTot.depl,tgt:Tc.depl}];
-  const mcH=mds.map(m=>{ const pct=m.tgt>0?Math.round(m.v/m.tgt*100):0; const cls=pct>=100?'ok':pct>=50?'':'warn'; return `<div class="mc"><div class="mc-l">${m.l}</div><div class="mc-v ${cls}">${m.v}</div><div class="mc-s">din ${m.tgt} · ${pct}%</div></div>`; }).join('');
-  const mpPct=Math.min(100,Math.round(mTot.std/Tc.std*100));
-  const ahead=mTot.std>=exp+3,behind=mTot.std<exp-2;
-  const mpC=ahead?'var(--ok)':behind?'var(--bad)':'var(--blue-p)';
-  const mpCls=ahead?'ok':behind?'bad':'warn';
-  const mpT=ahead?'Înaintea graficului':behind?'În urmă':'În grafic';
-  return `<div class="sec"><div class="sec-t">Luna curentă</div>
-    <div class="card">
-      <div class="mets">${mcH}</div>
-      <div class="pb-row"><span class="pb-label">Pace dosare standard</span><span class="badge ${mpCls}">${mpT}</span></div>
-      <div class="pb-bg"><div class="pb-fill" style="width:${mpPct}%;background:${mpC}"></div></div>
-      <div class="pb-ends"><span>0</span><span>așteptat azi: ${exp}</span><span>${Tc.std}</span></div>
-    </div>
-  </div>`;
+  var dim=new Date(yr,cm1,0).getDate(),exp=Math.round(Tc.std*now.getDate()/dim);
+  var mds=[{l:'DOSARE STANDARD',v:mTot.std,tgt:Tc.std},{l:'DAUNE MORALE',v:mTot.dm,tgt:Tc.dm},{l:'DEPLASĂRI',v:mTot.depl,tgt:Tc.depl}];
+  var mcH=mds.map(function(m){var pct=m.tgt>0?Math.round(m.v/m.tgt*100):0;var cls=pct>=100?'ok':pct>=50?'':'warn';return '<div class="mc"><div class="mc-l">'+m.l+'</div><div class="mc-v '+cls+'">'+m.v+'</div><div class="mc-s">din '+m.tgt+' · '+pct+'%</div></div>';}).join('');
+  var mpPct=Math.min(100,Math.round(mTot.std/Tc.std*100));
+  var ahead=mTot.std>=exp+3,behind=mTot.std<exp-2;
+  var mpC=ahead?'var(--ok)':behind?'var(--bad)':'var(--blue-p)';
+  var mpCls=ahead?'ok':behind?'bad':'warn';
+  var mpT=ahead?'Înaintea graficului':behind?'În urmă':'În grafic';
+  return '<div class="sec"><div class="sec-t">Luna curentă</div><div class="card"><div class="mets">'+mcH+'</div><div class="pb-row"><span class="pb-label">Pace dosare standard</span><span class="badge '+mpCls+'">'+mpT+'</span></div><div class="pb-bg"><div class="pb-fill" style="width:'+mpPct+'%;background:'+mpC+'"></div></div><div class="pb-ends"><span>0</span><span>așteptat azi: '+exp+'</span><span>'+Tc.std+'</span></div></div></div>';
 }
 
 function revPanel(mTot){
-  const vs=mTot.std*150,vd=mTot.dm*300,vp=mTot.depl*400,vt=5000+vs+vd+vp;
-  return `<div class="sec"><div class="sec-t">Venit brut acumulat — luna curentă</div>
-    <div class="card">
-      <div class="rev-g">
-        <div class="rv"><div class="rv-l">FIX LUNAR</div><div class="rv-v">5.000 lei</div></div>
-        <div class="rv"><div class="rv-l">VARIABILĂ ACUMULATĂ</div><div class="rv-v">${(vs+vd+vp).toLocaleString('ro-RO')} lei</div></div>
-        <div class="rv"><div class="rv-l">TOTAL BRUT</div><div class="rv-v" style="font-size:16px">${vt.toLocaleString('ro-RO')} lei</div></div>
-      </div>
-    </div>
-  </div>`;
+  var vs=mTot.std*150,vd=mTot.dm*300,vp=mTot.depl*400,vt=5000+vs+vd+vp;
+  return '<div class="sec"><div class="sec-t">Venit brut acumulat — luna curentă</div><div class="card"><div class="rev-g"><div class="rv"><div class="rv-l">FIX LUNAR</div><div class="rv-v">5.000 lei</div></div><div class="rv"><div class="rv-l">VARIABILĂ ACUMULATĂ</div><div class="rv-v">'+((vs+vd+vp).toLocaleString('ro-RO'))+' lei</div></div><div class="rv"><div class="rv-l">TOTAL BRUT</div><div class="rv-v" style="font-size:16px">'+vt.toLocaleString('ro-RO')+' lei</div></div></div></div></div>';
 }
 
 function logPanel(){
-  const cols=[{k:'date',l:'Data'},{k:'std',l:'Std'},{k:'dm',l:'DM'},{k:'depl',l:'Depl.'},{k:'note',l:'Notă'}];
-  const ths=cols.map(c=>{ const a=SC===c.k?(SA?' ↑':' ↓'):''; return `<th onclick="sortBy('${c.k}')">${c.l}${a}</th>`; }).join('')+'<th></th>';
-  const sorted=[...E].sort((a,b)=>{ let av=SC==='depl'?(a.depl?1:0):a[SC],bv=SC==='depl'?(b.depl?1:0):b[SC]; av=av??''; bv=bv??''; const c=typeof av==='string'?av.localeCompare(bv):av-bv; return SA?c:-c; });
-  let rows;
-  if(!sorted.length) rows='<tr class="empty-row"><td colspan="6">Nicio intrare încă.</td></tr>';
-  else rows=sorted.map(e=>`<tr>
-    <td>${fmtDate(e.date)}</td>
-    <td class="nm">${e.std}</td>
-    <td class="nm">${e.dm>0?e.dm:'—'}</td>
-    <td style="font-size:12px;color:var(--text2)">${e.depl?'Da':'—'}</td>
-    <td class="nc" title="${(e.note||'').replace(/"/g,'&quot;')}">${e.note||''}</td>
-    <td><button class="del-btn" onclick="delEntry('${e.date}')">×</button></td>
-  </tr>`).join('');
-  return `<div class="sec"><div class="sec-t">Jurnal zilnic</div>
-    <div class="card" style="padding:0;overflow:hidden">
-      <div class="log-wrap"><table class="log-t"><thead><tr>${ths}</tr></thead><tbody>${rows}</tbody></table></div>
-    </div>
-  </div>`;
+  var cols=[{k:'date',l:'Data'},{k:'std',l:'Std'},{k:'dm',l:'DM'},{k:'depl',l:'Depl.'},{k:'note',l:'Notă'}];
+  var ths=cols.map(function(c){var a=SC===c.k?(SA?' ↑':' ↓'):'';return '<th onclick="sortBy(\''+c.k+'\')">'+c.l+a+'</th>';}).join('')+'<th></th>';
+  var sorted=E.slice().sort(function(a,b){var av=SC==='depl'?(a.depl?1:0):a[SC],bv=SC==='depl'?(b.depl?1:0):b[SC];av=av!=null?av:'';bv=bv!=null?bv:'';var c=typeof av==='string'?av.localeCompare(bv):av-bv;return SA?c:-c;});
+  var rows;
+  if(!sorted.length)rows='<tr class="empty-row"><td colspan="6">Nicio intrare încă.</td></tr>';
+  else rows=sorted.map(function(e){return '<tr><td>'+fmtDate(e.date)+'</td><td class="nm">'+e.std+'</td><td class="nm">'+(e.dm>0?e.dm:'—')+'</td><td style="font-size:12px;color:var(--text2)">'+(e.depl?'Da':'—')+'</td><td class="nc" title="'+(e.note||'').replace(/"/g,'&quot;')+'">'+(e.note||'')+'</td><td><button class="del-btn" onclick="delEntry(\''+e.date+'\')">×</button></td></tr>';}).join('');
+  return '<div class="sec"><div class="sec-t">Jurnal zilnic</div><div class="card" style="padding:0;overflow:hidden"><div class="log-wrap"><table class="log-t"><thead><tr>'+ths+'</tr></thead><tbody>'+rows+'</tbody></table></div></div></div>';
 }
 
 function formPanel(){
-  return `<div class="sec"><div class="sec-t">Adaugă zi</div>
-    <div class="card">
-      <div class="fg">
-        <div class="fld"><label>DATA</label><input type="date" id="f-date"/></div>
-        <div class="fld"><label>DOSARE STANDARD</label><input type="number" id="f-std" min="0" max="20" value="0"/></div>
-        <div class="fld"><label>DAUNE MORALE</label><input type="number" id="f-dm" min="0" max="10" value="0"/></div>
-      </div>
-      <label class="cb-row"><input type="checkbox" id="f-depl"/> Deplasare (400 lei net)</label>
-      <div class="fld nf"><label>NOTĂ</label><input type="text" id="f-note" placeholder="ex: deplasare Cluj, instanță lungă..."/></div>
-      <button class="sub-btn" id="add-btn" onclick="addEntry()">Adaugă intrare</button>
-      <div class="status-bar" id="save-status"></div>
-    </div>
-  </div>`;
+  return '<div class="sec"><div class="sec-t">Adaugă zi</div><div class="card"><div class="fg"><div class="fld"><label>DATA</label><input type="date" id="f-date"/></div><div class="fld"><label>DOSARE STANDARD</label><input type="number" id="f-std" min="0" max="20" value="0"/></div><div class="fld"><label>DAUNE MORALE</label><input type="number" id="f-dm" min="0" max="10" value="0"/></div></div><label class="cb-row"><input type="checkbox" id="f-depl"/> Deplasare (400 lei net)</label><div class="fld nf"><label>NOTĂ</label><input type="text" id="f-note" placeholder="ex: deplasare Cluj, instanță lungă..."/></div><button class="sub-btn" id="add-btn" onclick="addEntry()">Adaugă intrare</button><div class="status-bar" id="save-status"></div></div></div>';
 }
 
-// ── BOOT ───────────────────────────────────────────────────
-loadDataFull();
+loadData();
 </script>
 </body>
 </html>
