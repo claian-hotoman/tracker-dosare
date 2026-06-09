@@ -130,7 +130,42 @@ function monday(s){ var d=new Date(s+'T12:00:00'),dw=d.getDay(); d.setDate(d.get
 function monthE(yr,m1){ return E.filter(function(e){ return e.date.indexOf(yr+'-'+pad(m1))===0; }); }
 function weekE(mon){ var fri=new Date(mon+'T12:00:00'); fri.setDate(fri.getDate()+4); var friS=fri.toISOString().slice(0,10); return E.filter(function(e){ if(e.date<mon||e.date>friS)return false; var dw=new Date(e.date+'T12:00:00').getDay(); return dw>=1&&dw<=5; }); }
 function sumE(arr){ return arr.reduce(function(a,e){ return {std:a.std+(e.std||0),dm:a.dm+(e.dm||0),depl:a.depl+(e.depl?1:0)}; },{std:0,dm:0,depl:0}); }
-function fmtDate(s){ return new Date(s+'T12:00:00').toLocaleDateString('ro-RO',{day:'2-digit',month:'2-digit',weekday:'short'}); }
+function normalizeDate(s){
+  // handles YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Date objects, and Google Sheets serial numbers
+  if(!s) return '';
+  s = String(s).trim();
+  // already YYYY-MM-DD
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  // DD/MM/YYYY
+  if(/^\d{2}\/\d{2}\/\d{4}$/.test(s)){
+    var p=s.split('/'); return p[2]+'-'+p[1]+'-'+p[0];
+  }
+  // M/D/YYYY or MM/DD/YYYY (Google sometimes returns this)
+  if(/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(s)){
+    var p=s.split('/');
+    return p[2]+'-'+pad(p[0])+'-'+pad(p[1]);
+  }
+  // Google Sheets serial number (number of days since 1899-12-30)
+  if(/^\d+$/.test(s)){
+    var serial=parseInt(s);
+    var base=new Date(1899,11,30);
+    base.setDate(base.getDate()+serial);
+    return base.getFullYear()+'-'+pad(base.getMonth()+1)+'-'+pad(base.getDate());
+  }
+  // fallback: try parse
+  try {
+    var d=new Date(s);
+    if(!isNaN(d.getTime())) return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  } catch(e){}
+  return s;
+}
+function fmtDate(s){
+  var norm=normalizeDate(s);
+  if(!norm) return s;
+  try {
+    return new Date(norm+'T12:00:00').toLocaleDateString('ro-RO',{day:'2-digit',month:'2-digit',weekday:'short'});
+  } catch(e){ return norm; }
+}
 
 function jsonp(url){
   return new Promise(function(resolve,reject){
@@ -151,7 +186,7 @@ function gsRead(){
     var header=rows[0];
     var ovr=(header[7]==='rot'||header[7]==='nrot')?header[7]:'auto';
     var entries=rows.slice(1).map(function(r){
-      return {date:String(r[0]||''),std:parseInt(r[1])||0,dm:parseInt(r[2])||0,depl:r[3]==='true'||r[3]===true,note:String(r[4]||'')};
+      return {date:normalizeDate(String(r[0]||'')),std:parseInt(r[1])||0,dm:parseInt(r[2])||0,depl:r[3]==='true'||r[3]===true,note:String(r[4]||'')};
     }).filter(function(e){ return e.date.length>0; });
     return {entries:entries,ovr:ovr};
   });
